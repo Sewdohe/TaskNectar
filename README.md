@@ -1,7 +1,3 @@
-# Tauri + Angular
-
-This template should help get you started developing with Tauri and Angular.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) + [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+To run the application:
+  1. Run `npm run tauri dev` in the root directory of the project
+  2. Cd into 'CalendarApi' folder and run `npm run dev` to start the express server
