@@ -1,0 +1,36 @@
+<div *ngIf="!isAuthed">
+  <button mat-button (click)="onClickSubmit()">Login</button>
+  <form class="login-form">
+  </form>
+    <form [formGroup]="this.loginFormGroup">
+      <div class="example-full-width">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input formControlName="user" matInput placeholder="Ex. Sewdohe">
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password">
+        </mat-form-field>
+      </div>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Server</mat-label>
+        <span matPrefix>https:// &nbsp;</span>
+        <input formControlName="server" matInput type="text">
+      </mat-form-field>
+  </form>
+</div>
+
+<div *ngIf="isAuthed">
+  <div *ngIf="calendars; else loading">
+    <h1>Welcome to GitDone</h1>
+  </div>
+  <ng-template #loading>
+    <div class="loading-container">
+      <mat-spinner></mat-spinner>
+    </div>
+    <h2>Loading Calendar Data</h2>
+  </ng-template>
+</div>

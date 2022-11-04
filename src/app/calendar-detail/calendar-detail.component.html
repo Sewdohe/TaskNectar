@@ -1,0 +1,5 @@
+<div *ngIf="calenderObjects$ | async">
+  <h3 *ngFor="let task of tasks">
+    {{task.summary}}
+  </h3>
+</div>
