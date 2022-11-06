@@ -1,5 +1,3 @@
 <div *ngIf="calenderObjects$ | async">
-  <h3 *ngFor="let task of tasks">
-    {{task.summary}}
-  </h3>
+    <app-task *ngFor="let object of calenderObjects$ | async" [task]="object"></app-task>
 </div>
