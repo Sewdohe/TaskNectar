@@ -22,7 +22,9 @@ import { MatCardModule } from '@angular/material/card'
 import { CalendarDetailComponent } from './calendar-detail/calendar-detail.component';
 import { TaskComponent } from './task/task.component';
 import {MatIconModule} from '@angular/material/icon';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDividerModule} from '@angular/material/divider'
 
 
 @NgModule({
@@ -48,7 +50,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatDividerModule
   ],
   bootstrap: [AppComponent],
   providers: [DavService, AuthService, {
@@ -62,7 +67,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule, 
     MatInputModule, 
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatDividerModule
   ]
 })
 export class AppModule { }

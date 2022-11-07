@@ -4,7 +4,8 @@ import { DAVCalendarObject } from 'tsdav'
 interface ParsedTask {
   title: string,
   dueDate: Date,
-  priority: number
+  priority: number,
+  done: boolean
 }
 
 @Component({
@@ -21,12 +22,18 @@ export class TaskComponent implements OnInit {
 
   }
 
+  flipDone() {
+    this.parsedTask!.done = !this.parsedTask?.done;
+    console.log(`${this.parsedTask?.title} ${this.parsedTask?.done ? 'is done' : 'is not done'}`)
+  }
+
   todoParse(): ParsedTask {
     //TODO: Implement parser
     let parsed: ParsedTask = {
       title: '',
       dueDate: new Date,
-      priority: 0
+      priority: 0,
+      done: false
     }
 
     let dataLines: string[] = this.task.data.split('\n')

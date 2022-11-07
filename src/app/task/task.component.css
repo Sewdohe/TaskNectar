@@ -1,0 +1,46 @@
+.taskContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-items: center;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.iconActionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+h3 {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+span {
+  color: grey;
+  font-size: 0.8rem;
+}
+
+.mat-card {
+  margin: 1rem;
+}
+
+.mat-checkbox {
+  display: flex;
+}
+
+.done {
+  text-decoration: line-through;
+}

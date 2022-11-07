@@ -15,3 +15,15 @@
   top: 0;
   z-index: 1;
 }
+
+.mat-nav-list {
+  margin: 10px;
+}
+
+.mat-sidenav-container {
+  position: fixed;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: calc(100% - 64px);
+}

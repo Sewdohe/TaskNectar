@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.loginFormGroup = this.formBuilder.group({
       user: ['', Validators.required],
       password: ['', Validators.required],
-      server: ['', Validators.required]
+      server: ['nextcloud.divnectar.com', Validators.required]
     });
   }
 

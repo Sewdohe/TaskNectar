@@ -1,9 +1,17 @@
 <mat-card>
-  <mat-card-title>{{parsedTask?.title}}</mat-card-title>
-  <mat-card-subtitle>{{ parsedTask?.dueDate | date}}</mat-card-subtitle>
-  <mat-card-actions align="end">
-    <button mat-icon-button aria-label="complete task">
-      <mat-icon>done</mat-icon>
-    </button>
-  </mat-card-actions>
+  <div class="taskContainer">
+    <mat-checkbox (ngModelChange)="flipDone()" [ngModel]="parsedTask?.done"></mat-checkbox>
+    <div [ngClass]="{'done': this.parsedTask?.done}" class="textContainer">
+      <h3>{{parsedTask?.title}}</h3>
+      <span>{{ parsedTask?.dueDate | date}}</span>
+    </div>
+    <div class="iconActionContainer">
+      <button mat-icon-button matTooltipPosition="right" matTooltip="reschedule task" aria-label="reschedule">
+        <mat-icon>edit_calendar</mat-icon>
+      </button>
+      <button mat-icon-button matTooltipPosition="right" matTooltip="edit details" aria-label="details">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </div>
 </mat-card>
