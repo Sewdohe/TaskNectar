@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "nc-tasks"
+  },
+  "targets": {
+    "nc-tasks": {
+      "hosting": {
+        "GitDone": [
+          "nc-tasks"
+        ]
+      }
+    }
   }
 }

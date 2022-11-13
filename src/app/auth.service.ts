@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, interval, map, Observable, Observer } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import { Firestore, collection, doc } from '@angular/fire/firestore'
 import {
   DAVCalendar,
   DAVCalendarObject
@@ -47,6 +48,13 @@ export class AuthService {
 
   public calendars$ = 
     new BehaviorSubject<DAVCalendar[] | null>(null);
+
+  constructor(
+    private http: HttpClient,
+    @Inject(DOCUMENT) private document: Document,
+    private firestore: Firestore) {
+
+  }
 
   loginToServer(authResponse: AuthResponse) {
     console.warn('logging into API')
@@ -132,6 +140,4 @@ export class AuthService {
     })
   }
 
-  constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document) {
-  }
 }

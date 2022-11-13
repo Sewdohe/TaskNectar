@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   DAVCalendar,
 } from "tsdav";
+import { TauriService } from 'src/app/services/tauri.service';
 
 
 @Component({
@@ -20,7 +21,10 @@ export class LoginComponent implements OnInit {
     this.auth.startLogin();
   }
 
-  constructor(private auth: AuthService, private readonly formBuilder: FormBuilder) {
+  constructor(
+    private auth: AuthService,
+    private readonly formBuilder: FormBuilder,
+    private tauri: TauriService) {
     this.loginFormGroup = this.formBuilder.group({
       user: ['', Validators.required],
       password: ['', Validators.required],
@@ -41,6 +45,14 @@ export class LoginComponent implements OnInit {
     this.auth.calendars$.subscribe((calendars) => {
       this.calendars = calendars;
       console.log(this.calendars!)
+    })
+
+    this.tauri.createDataFolder().then(_res => {
+      console.warn('dir was made')
+    })
+
+    this.tauri.createDataFile().then(_res => {
+      console.log('file made')
     })
   }
 

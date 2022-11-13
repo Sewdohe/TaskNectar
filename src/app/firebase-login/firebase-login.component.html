@@ -1,0 +1,16 @@
+<button mat-button (click)="onClickSubmit()">Login</button>
+<form class="login-form">
+</form>
+  <form [formGroup]="this.loginFormGroup">
+    <div class="example-full-width">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input formControlName="user" matInput placeholder="Ex. Sewdohe">
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+      </mat-form-field>
+    </div>
+</form>

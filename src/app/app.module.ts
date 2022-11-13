@@ -24,7 +24,12 @@ import { TaskComponent } from './task/task.component';
 import {MatIconModule} from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatDividerModule} from '@angular/material/divider'
+import {MatDividerModule} from '@angular/material/divider';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FirebaseLoginComponent } from './firebase-login/firebase-login.component'
 
 
 @NgModule({
@@ -34,6 +39,7 @@ import {MatDividerModule} from '@angular/material/divider'
     NavComponent,
     CalendarDetailComponent,
     TaskComponent,
+    FirebaseLoginComponent,
   ],
   imports: [
     CommonModule,
@@ -53,7 +59,10 @@ import {MatDividerModule} from '@angular/material/divider'
     MatCardModule,
     MatCheckboxModule,
     MatTooltipModule,
-    MatDividerModule
+    MatDividerModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   bootstrap: [AppComponent],
   providers: [DavService, AuthService, {
